@@ -1,8 +1,8 @@
 [package]
-name = "wasm-opt-action"
-description = "Slim wrapper around wasm-opt"
+name = "wasm2js-action"
+description = "Slim wrapper around wasm2js"
 version = "0.1.0"
-authors = ["Niklas Eicker <git@nikl.me>"]
+authors = ["Niklas Eicker <git@nikl.me>", "Jesus Hernandez <jesushdez@protonmail.com>"]
 edition = "2021"
 publish = false
 
