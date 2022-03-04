@@ -1,7 +1,7 @@
 FROM rust:1.57 as build
 
-RUN USER=root cargo new --bin wasm-opt-action
-WORKDIR /wasm-opt-action
+RUN USER=root cargo new --bin wasm2js-action
+WORKDIR /wasm2js-action
 
 COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
@@ -23,8 +23,8 @@ RUN mkdir binaryen
 RUN wget -qO- https://github.com/WebAssembly/binaryen/releases/download/version_104/binaryen-version_104-x86_64-linux.tar.gz | tar xvz -C ./binaryen binaryen-version_104 --strip=1
 ENV PATH $PATH:/binaryen/bin
 
-COPY --from=build /wasm-opt-action/target/release/wasm-opt-action .
+COPY --from=build /wasm2js-action/target/release/wasm2js-action .
 ENV PATH $PATH:/
-RUN chmod +x /wasm-opt-action
+RUN chmod +x /wasm2js-action
 
-ENTRYPOINT ["wasm-opt-action"]
+ENTRYPOINT ["wasm2js-action"]
