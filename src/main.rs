@@ -18,7 +18,7 @@ fn main() {
         args.remove(0).trim_start_matches("/")
     );
     let options = args.first().unwrap_or(&"-Os".to_owned()).to_owned();
-    Command::new("wasm-opt")
+    Command::new("wasm2js")
         .args([input, "-o".to_owned(), output, options])
         .output()
         .expect("failed to execute command");
