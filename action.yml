@@ -1,15 +1,15 @@
-name: 'wasm-opt action'
-author: "Niklas Eicker (@NiklasEi)"
-description: "Use WebAssembly/binaryen's wasm-opt in your workflows"
+name: 'wasm2js action'
+author: "Jesus Hernandez"
+description: "Use WebAssembly/binaryen's wasm2js in your workflows"
 inputs:
   file:
-    description: 'The wasm file to optimize'
+    description: 'The wasm file'
     required: true
   output:
-    description: 'The output wasm file'
+    description: 'The output js file'
     required: true
   options:
-    description: 'Additional options to pass to wasm-opt'
+    description: 'Additional options to pass to wasm2js'
     required: false
     default: "-Os"
 runs:
